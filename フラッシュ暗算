@@ -1,0 +1,78 @@
+import random
+a = 10
+for a in range(10):
+    str1 = random.randint(1,9)
+    str2 = random.randint(1,9)
+    while str2 == str1:
+        str2 = random.randint(1,9)
+    str3 = random.randint(1,9)
+    while str3 == str1 or str3 == str2:
+        str3 = random.randint(1,9)
+    str4 = random.randint(1,9)
+    while str4 == str1 or str4 == str2 or str4 == str3:
+        str4 = random.randint(1,9)
+    s = random.randint(0,10)
+    if s < 2:
+        ans = str1 * str2 * str3 
+        print('a×a×a={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        if p*q*r == ans:
+            print('○')
+        else:
+            print('×, {}×{}×{}={}'.format(str1,str2,str3,ans))
+    elif 2 <= s < 4:
+        ans = str1 + str2 * str3 
+        print('a+a×a={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        if p+q*r == ans:
+            print('○')
+        else:
+            print('×, {}+{}×{}={}'.format(str1,str2,str3,ans))
+    elif 4 <= s < 6:
+        ans = str1 + str2 + str3 
+        print('a+a+a={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        if p+q+r == ans:
+            print('○')
+        else:
+            print('×, {}+{}+{}={}'.format(str1,str2,str3,ans))
+    elif 6 <= s < 7:
+        ans = (str1 - str2) + (str3  * str4)
+        print('(a-a)+a×a={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        t = int(input())
+        if (p-q)+r*t == ans:
+            print('○')
+        else:
+            print('×, ({}-{})+{}×{}={}'.format(str1,str2,str3,str4,ans))
+    elif 7 <= s < 8:
+        ans = (str1 - str2) + (str3  - str4)
+        print('(a-a)+(a-a)={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        t = int(input())
+        if (p-q)+(r-t) == ans:
+            print('○')
+        else:
+            print('×, ({}-{})+{}×{}={}'.format(str1,str2,str3,str4,ans))
+    elif 8 <= s :
+        ans = str1 + str2 - str3 + str4
+        print('a+a-a+a={}'.format(ans))
+        p = int(input())
+        q = int(input())
+        r = int(input())
+        t = int(input())
+        if p+q-r+t == ans:
+            print('○')
+        else:
+            print('×, {}+{}-{}+{}={}'.format(str1,str2,str3,str4,ans))
+    a += 1
